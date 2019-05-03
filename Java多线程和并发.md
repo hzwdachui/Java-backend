@@ -186,6 +186,7 @@ ref: https://stackoverflow.com/questions/3047564/java-synchronized-method-lock-o
 - main里面latch.await()，把main线程停住了，main线程就等着其他的线程全部执行countdown()方法
 
 ### cracker
-- 主要思路是把一个把一个破解工作交给好几个thread来破解，A破解开头是A~E的数字，B破解开头是F~J的数字
+- 给一串SHA256加密后的字符串，还原成正常字符串
+- 主要思路是把一个把一个破解工作交给好几个thread来破解，A破解开头是A\~E的数字，B破解开头是F~J的数字
 - 用的是暴力破解，一位一位的循环匹配
 - 同样的先是main thread await()，在每个worker thread中的run()方法中用latch.countdown()，等到破解完成再运行main thread
